@@ -867,7 +867,7 @@ class StringDistance:
 
 
 class JudgeLLM:
-    available_models_openai = ["gpt-3.5-turbo", "gpt-4o", "gpt-4-turbo", "gpt-4", "gpt-4o-2024-08-06", "gpt-4.1-2025-04-14", "chatgpt-4o-latest"]
+    available_models_openai = ["gpt-3.5-turbo", "gpt-4o", "gpt-4-turbo", "gpt-4", "gpt-4o-2024-08-06", "gpt-4.1-2025-04-14", "chatgpt-4o-latest", "gpt-4.1-nano-2025-04-14"]
 
     def __init__(
         self,
@@ -935,11 +935,11 @@ class JudgeLLM:
 class JudgeLLMSimpleQA(JudgeLLM):
     def __init__(self):
         super().__init__(
-            judge_model_name="chatgpt-4o-latest",
+            judge_model_name="gpt-4.1-nano-2025-04-14",
             template=get_judge_prompt_simpleqa,
             process_judge_response=process_judge_response_simpleqa,
             judge_backend="openai",
-            short_judge_name="chatgpt-4o-latest",
+            short_judge_name="gpt-4.1-nano-2025-04-14",
         )
 
     def compute(self, sample_ids: list[str], responses: list, formatted_docs: list[Doc], **kwargs) -> dict[str, float]:
