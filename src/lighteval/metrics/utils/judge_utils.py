@@ -118,7 +118,7 @@ Just return the letters "A", "B", or "C", with no text around it.
 def process_judge_response_simpleqa(response: str) -> float:
     response = response.replace("<|START_RESPONSE|>", "")
     response = response.replace("<|END_RESPONSE|>", "")
-    print(response)
+    response = response.split()
     if response == "A":
         return 1.0
     elif response == "B":
