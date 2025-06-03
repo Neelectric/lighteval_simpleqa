@@ -935,11 +935,11 @@ class JudgeLLM:
 class JudgeLLMSimpleQA(JudgeLLM):
     def __init__(self):
         super().__init__(
-            judge_model_name="meta-llama/Llama-3.3-70B-Instruct",
+            judge_model_name="CohereLabs/c4ai-command-a-03-2025",
             template=get_judge_prompt_simpleqa,
             process_judge_response=process_judge_response_simpleqa,
             judge_backend="vllm",
-            short_judge_name="meta-llama/Llama-3.3-70B-Instruct",
+            short_judge_name="CohereLabs/c4ai-command-a-03-2025",
         )
 
     def compute(self, sample_ids: list[str], responses: list, formatted_docs: list[Doc], **kwargs) -> dict[str, float]:
