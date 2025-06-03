@@ -935,11 +935,11 @@ class JudgeLLM:
 class JudgeLLMSimpleQA(JudgeLLM):
     def __init__(self):
         super().__init__(
-            judge_model_name="gpt-4.1-nano-2025-04-14",
+            judge_model_name="meta-llama/Llama-3.3-70B-Instruct",
             template=get_judge_prompt_simpleqa,
             process_judge_response=process_judge_response_simpleqa,
-            judge_backend="openai",
-            short_judge_name="gpt-4.1-nano-2025-04-14",
+            judge_backend="vllm",
+            short_judge_name="meta-llama/Llama-3.3-70B-Instruct",
         )
 
     def compute(self, sample_ids: list[str], responses: list, formatted_docs: list[Doc], **kwargs) -> dict[str, float]:
